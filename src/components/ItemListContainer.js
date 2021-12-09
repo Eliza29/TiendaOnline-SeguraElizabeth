@@ -26,7 +26,7 @@ const ItemListContainer = ({greeting}) => {
     }, [])
     
     return (
-        <div className="w-full p-4 mx-auto mt-20 lg:mt-16">  
+        <div className="w-full p-4 mx-auto mt-20 lg:mt-16 max-w-screen-xl">  
             <h2>{greeting}</h2>
             <ItemList items={items}/>
         </div>
