@@ -1,3 +1,4 @@
+import ItemDetailContainer from './components/ItemDetailContainer'
 import ItemListContainer from './components/ItemListContainer'
 import Navbar from './components/NavBar'
 
@@ -6,6 +7,7 @@ const App = () => {
     <>
       <Navbar/>
       <ItemListContainer greeting="Bienvenida a mi tienda online"/>
+      <ItemDetailContainer/>
     </>
     
   )
