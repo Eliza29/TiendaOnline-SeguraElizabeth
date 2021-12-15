@@ -1,7 +1,7 @@
 # Proyecto Tienda Online
 
-Desarrollado para CoderHouse
-El objetivo del proyecto es crear ua tienda Online usando la libreria React Js.
+- Desarrollado para CoderHouse
+- El objetivo del proyecto es crear una tienda Online usando la libreria React Js.
 
 ## Tecnologías
 
