@@ -1,11 +1,16 @@
+import { useState } from "react"
 import ItemCount from "./ItemCount"
+import { Link } from "react-router-dom"
 
 
 const ItemDetail = ({item}) => {
 
+    const [quantity, setquantity] = useState(0)
  
     const onAdd = (counter) =>{
-        console.log('agregaste'+ counter + 'producto(s) al carrito')           
+        
+        setquantity(counter)
+        console.log('agregaste'+ counter + 'producto(s) al carrito') 
     }
    
     return (
@@ -17,7 +22,11 @@ const ItemDetail = ({item}) => {
                 <p className="text-2xl font-semibold">{item.title}</p>
                 <p className="text-base my-7"> {item.description} </p>
                 <p className="text-xl font-semibold"> US$ {item.price} </p>
-                <ItemCount  stock={item.stock} initial={1} onAdd={onAdd}/>
+                {quantity===0 &&
+                    <ItemCount  stock={item.stock} initial={1} onAdd={onAdd}/>
+                }
+                <Link to="/cart"> <button className="w-full mt-1 p-1 text-sm bg-gray-100">COMPRAR</button></Link>
+                
             </div>
         </div>
     )
