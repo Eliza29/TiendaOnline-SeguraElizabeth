@@ -35,10 +35,7 @@ const CartContext = ({children}) => {
         const newCart = carrito.filter(product=> product.id !== itemId)
         setcarrito(newCart)
     }
-    const clear=()=>{
-        console.log('clear')
-        setcarrito([])
-    }
+
     const isInCart=(item)=>{
         return carrito.find(producto => Number(producto.id) === item.id)? true:false    
     }
@@ -48,7 +45,6 @@ const CartContext = ({children}) => {
         // quantity,
         addItem,
         removeItem,
-        clear,
         isInCart
     }
     return (

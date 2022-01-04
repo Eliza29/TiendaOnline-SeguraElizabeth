@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import ItemCount from "./ItemCount"
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import {context} from "../context/CartContext"
 
 
@@ -9,8 +9,6 @@ const ItemDetail = ({item}) => {
     const resultado = useContext(context)
     const [quantity, setquantity] = useState(0)
     
-    console.log(resultado.carrito, 'carrito itemdetail,')
-
 
     const onAdd = (counter) =>{
         setquantity(counter)
@@ -29,10 +27,8 @@ const ItemDetail = ({item}) => {
                 {quantity===0 &&
                     <ItemCount  stock={item.stock} initial={1} onAdd={onAdd}/>
                 }
-                {/* <Link to="/cart"> <button onClick={()=>resultado.addItem(item, quantity)} className="w-full mt-1 p-1 text-sm bg-gray-100">COMPRAR</button></Link> */}
-                <button onClick={()=>resultado.addItem(item, quantity)} className="w-full mt-1 p-1 text-sm bg-gray-100">COMPRAR</button>
-                <button onClick={()=>resultado.removeItem(item.id)} className="w-full mt-1 p-1 text-sm bg-gray-100">eliminar item</button>
-                <button onClick={()=>resultado.clear()} className="w-full mt-1 p-1 text-sm bg-gray-100">eliminar todo</button>
+                <Link to="/cart"> <button onClick={()=>resultado.addItem(item, quantity)} className="w-full mt-1 p-1 text-sm bg-gray-100">COMPRAR</button></Link>
+               
             </div>
         </div>
     )
