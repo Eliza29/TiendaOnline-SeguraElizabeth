@@ -1,6 +1,8 @@
-import { MdShoppingCart } from "react-icons/md";
+import { MdShoppingCart } from "react-icons/md"
 import { useContext } from "react"
 import {context} from "../context/CartContext"
+import { Link } from "react-router-dom"
+
 
 const CartWidget = () => {
     const contexto = useContext(context)
@@ -13,8 +15,9 @@ const CartWidget = () => {
 
     return (
         <div className="inline-flex">
-           
-            <MdShoppingCart size="1.4rem"/> 
+            <Link to="/cart"> 
+                <MdShoppingCart size="1.4rem"/> 
+            </Link>
             {
                 total !== 0 && <span>{total}</span>
             }
